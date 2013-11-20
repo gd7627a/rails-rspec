@@ -7,9 +7,13 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :title, :content
 
-  private
+
+  def presence
+    @presence = false
+  end
 
   def titleize_title
     self.title = title.titleize
   end
+
 end
